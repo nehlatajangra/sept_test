@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap Page</title>
+</head>
+
+<body>
+    {% block body %}
+    <div class="container">
+        <div class="main" >
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"
+                style="height: 300px; width: 100%; background-color: green;">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active mt-5">
+                        <h2 style="display: flex; align-items: center; justify-content: center;color: white;">Welcme to
+                            green</h2>
+                        <div>
+                            <p
+                                style="padding-left: 100px; padding-right: 100px; color: white; justify-content: center;">
+                                Each parameter defines the intensity of the color as an integer between 0 and 255.
+
+                                For example, rgb(0,0,255) is rendered as blue, because the blue parameter is set to its
+                                highest value (255) and the others are set to 0.</p>
+                        </div>
+
+                        <div style="display: flex; align-items: center; justify-content: center;"><button type="button"
+                                class="btn btn-success">Read More</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item  mt-5">
+                        <h2 style="display: flex; align-items: center; justify-content: center;color: white;">Welcme to
+                            green</h2>
+                        <div>
+                            <p
+                                style="padding-left: 100px; padding-right: 100px; color: white; justify-content: center;">
+                                Each parameter defines the intensity of the color as an integer between 0 and 255.
+
+                                For example, rgb(0,0,255) is rendered as blue, because the blue parameter is set to its
+                                highest value (255) and the others are set to 0.</p>
+                        </div>
+
+                        <div style="display: flex; align-items: center; justify-content: center;"><button type="button"
+                                class="btn btn-success">Read More</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item  mt-5">
+                        <h2 style="display: flex; align-items: center; justify-content: center;color: white;">Welcme to
+                            green</h2>
+                        <div>
+                            <p
+                                style="padding-left: 100px; padding-right: 100px; color: white; justify-content: center;">
+                                Each parameter defines the intensity of the color as an integer between 0 and 255.
+
+                                For example, rgb(0,0,255) is rendered as blue, because the blue parameter is set to its
+                                highest value (255) and the others are set to 0.</p>
+                        </div>
+
+                        <div style="display: flex; align-items: center; justify-content: center;"><button type="button"
+                                class="btn btn-success">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div class="cards_div row">
+                <div class="card col-3 ms-5 me-5" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col-3 ms-5 me-5" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card col-4 ms-5 me-5" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <!-- Remove the container if you want to extend the Footer to full width. -->
+            <div class="container my-5">
+                <!-- Footer -->
+                <footer class="text-center text-lg-start text-white" style="background-color: #3e4551">
+                    <!-- Grid container -->
+                    <div class="container p-4 pb-0">
+                        <!-- Section: Links -->
+                        <section class="">
+                            <!--Grid row-->
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                                    <h5 class="text-uppercase">FOOTER CONTENT</h5>
+
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Molestiae modi cum ipsam ad, illo possimus laborum ut
+                                        reiciendis obcaecati. Ducimus, quas. Corrupti, pariatur eaque?
+                                        Reiciendis assumenda iusto sapiente inventore animi?
+                                    </p>
+                                </div>
+                                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                    <h5 class="text-uppercase">Links</h5>
+
+                                    <ul class="list-unstyled mb-0">
+                                        <li>
+                                            <a href="#!" class="text-white">Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 4</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                    <h5 class="text-uppercase">Links</h5>
+
+                                    <ul class="list-unstyled mb-0">
+                                        <li>
+                                            <a href="#!" class="text-white">Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 4</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                    <h5 class="text-uppercase">Links</h5>
+
+                                    <ul class="list-unstyled mb-0">
+                                        <li>
+                                            <a href="#!" class="text-white">Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 4</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                                    <h5 class="text-uppercase">Links</h5>
+
+                                    <ul class="list-unstyled mb-0">
+                                        <li>
+                                            <a href="#!" class="text-white">Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!" class="text-white">Link 4</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <hr class="mb-4" />
+
+                        <section class="">
+                            <p class="d-flex justify-content-center align-items-center">
+                                <span class="me-3">Register for free</span>
+                                <button type="button" class="btn btn-outline-light btn-rounded">
+                                    Sign up!
+                                </button>
+                            </p>
+                        </section>
+
+                        <hr class="mb-4" />
+
+                        <section class="mb-4 text-center">
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                    class="fab fa-facebook-f"></i></a>
+
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                    class="fab fa-twitter"></i></a>
+
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                    class="fab fa-google"></i></a>
+
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                    class="fab fa-instagram"></i></a>
+
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                    class="fab fa-linkedin-in"></i></a>
+
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                    class="fab fa-github"></i></a>
+                        </section>
+                    </div>
+
+                    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                        © 2020 Copyright:
+                        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

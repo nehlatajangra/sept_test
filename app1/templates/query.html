@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    {% block body %}
+
+    <form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Search</label>
+        <input type="text" class="form-control mt-2" id="queryInput" aria-describedby="emailHelp" placeholder="Enter to search" style="width: 20%;">
+      </div>
+      <button type="button" class="btn btn-primary mt-3" id="searchBTN">Search</button>
+
+    </form>
+    <script>
+        document.getElementById("searchBTN").addEventListener("click",function(){
+            var xhr= new XMLHttpRequest();
+            console.log("calling")
+            var query=document.getElementById("queryInput").value;
+            console.log(query)
+            xhr.open("Get",`https://api-ninjas.com/api/recipe?query=${query}`);
+            xhr.onload=function(){
+                var mydata=JSON.parse(xhr.responseText);
+                renderHtml(mydata)
+            };
+            xhr.send();
+        })
+    </script>
+    {% endblock %}
+
+</body>
+</html>

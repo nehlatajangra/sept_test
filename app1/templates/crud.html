@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+</head>
+
+<body>
+    {% block body %}
+    <div id="apiData">
+        <table class="table" id="formDataTable">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        console.log("calling")
+        xhr.open("Get", "http://127.0.0.1:8000/person/");
+        xhr.onload = function () {
+            var mydata = JSON.parse(xhr.responseText);
+            renderHtml(mydata)
+        };
+        xhr.send();
+        function renderHtml(data) {
+            var tbl = document.getElementById("formDataTable");
+            for (i = 0; i < data.length; i++) {
+                var row = tbl.insertRow();
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                cell2.innerHTML = data[i].fname;
+                cell3.innerHTML = data[i].lname;
+                cell4.innerHTML = '<a href="#"><i class="fa-solid fa-eye"></i></a>' +
+                    '<a href="#" onclick=""><i class="fa-solid fa-pencil"></i></a>' +
+                    '<a href="#" onclick="deletePerson(i)"><i class="fa-solid fa-trash"></i></a>'
+
+            }
+        }
+        function deletePerson(u_id) {
+            console.log(u_id)
+            var url=`http://127.0.0.1:8000/person/${u_id}/`
+            console.log(url)
+            fetch(url, {
+                method: "DELETE",
+            })
+            console.log("deleted")
+        }
+    </script>
+    {% endblock %}
+</body>
+
+</html>

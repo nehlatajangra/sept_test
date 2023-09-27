@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    {% block body %}
+    <h1> This Nabvar is fixed</h1>
+
+    <!-- form for counter  -->
+    <div class="counter mt-5"
+        style="background-color: rgb(214, 228, 229); display: flex; justify-content: center; align-items: center;  width: 400px;">
+        <form id="counter_form">
+            <h1 style="text-align: center;">Counter</h1>
+            <p style="text-align: center;"><span id="counter_value"></span></p>
+
+            <button class="btn btn-primary " type="button" onclick="decrease()">DECREASE</button>
+            <button class="btn btn-primary ms-2" type="button" onclick="resetCounter()">RESET</button>
+            <button class="btn btn-primary ms-2" type="button" onclick="increase()">INCREASE</button>
+        </form>
+    </div>
+
+    <div class="color_dropdown mt-5" style=" background-color:rgb(214, 228, 229);   width: 400px; display: none;">
+        <div>
+            <div class="dropdown mb-4">
+                <a class="btn btn-secondary dropdown-toggle" style="width: 200px;" href="#" role="button"
+                    id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown link
+                </a>
+
+                <ul class="dropdown-menu" id="color_dropdown" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Green</a></li>
+                    <li><a class="dropdown-item" href="#">Red</a></li>
+                    <li><a class="dropdown-item" href="#">Pink</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="color_div" style="height: 300px; width: 300px; background-color: black; "></div>
+    </div>
+
+    <div class="dropdown mt-5" style=" background-color:rgb(214, 228, 229); height: 200px;  width: 400px; ">
+        <div class="row">
+            <div class="col dropdown mb-4">
+                <a class="btn btn-secondary dropdown-toggle" style="width: 200px;" href="#" role="button"
+                    id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown link
+                </a>
+
+                <ul class="dropdown-menu" id="dropdown" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Green</a></li>
+                    <li><a class="dropdown-item" href="#">Red</a></li>
+                    <li><a class="dropdown-item" href="#">Pink</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="removeItem()">Select and Remove</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        //counter function 
+        var counter = 0;
+        document.getElementById("counter_value").textContent = counter;
+
+        function increase() {
+            counter += 1;
+            document.getElementById("counter_value").textContent = counter;
+        }
+        function decrease() {
+            counter -= 1;
+            document.getElementById("counter_value").textContent = counter;
+        }
+        function resetCounter() {
+            counter = 0;
+            document.getElementById("counter_value").textContent = counter;
+        }
+
+        ////drop down color change function 
+         var selectedColor = '';
+         document.querySelectorAll('.dropdown-item').forEach(function (item) {
+         item.addEventListener('click', function () {
+                 selectedColor = item.textContent;
+                 console.log(selectedColor)
+                 document.getElementById("dropdownMenuLink").textContent = selectedColor;
+                // document.getElementById("dropdownMenuLink").style.backgroundColor = selectedColor;
+                 //document.getElementById("color_div").style.backgroundColor = selectedColor;
+                 removeItem(selectedColor)
+             });
+         });
+
+        ////dropdown item remover 
+        function removeItem(colorname) {
+            console.log("called")
+
+            if (colorname) {
+                dropdown.removeChild(colorname);
+                console.log("deleted") // Remove the selected item
+            }
+        }
+
+
+    </script>
+    {% endblock %}
+</body>
+
+
+</html>
