@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordian Page</title>
+    {% block style %}
+    <style>
+        body{
+            font-family :sans-serif;
+        }
+        .accordian{
+            max-width: 500px;
+            display: block;
+            margin: 100px auto;
+        }
+        .accordian .card .card-header{
+            position: relative;
+            padding-bottom: 80px;
+            background-color: #73778e;
+
+        }
+        .accordian .card .card-header h3{
+            cursor: pointer;
+            position: absolute;
+            background-color: #73778e;
+            padding: 20px;
+        }
+        .accordian .card .card-header span{
+            position: absolute;
+            padding: 20px;
+            right: 20px;
+        }
+        .accordian .card .card-body{
+            display: none;
+        }
+        .accordian .card:nth-child(1) .card-body{
+            display: block;
+        }
+    </style>
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+    <div class="accordian">
+        <div class="card">
+            <div class="card-header">
+                <h3> Heading one</h3>
+                <span class="fa fa-minus"></span>
+            </div>
+            <div class="card-body active">
+                <p>
+                    jfhjshf jfhjdf jhdjf j
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3> Heading two</h3>
+                <span class="fa fa-plus"></span>
+            </div>
+            <div class="card-body">
+                <p>
+                    jfhjshf jfhjdf jhdjf j
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3> Heading three</h3>
+                <span class="fa fa-plus"></span>
+            </div>
+            <div class="card-body">
+                <p>
+                    jfhjshf jfhjdf jhdjf j
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.card-header').click(function(){
+                if ($(this).next(".card-body").hasClass("active")){
+                    $(this).next(".card-body").removeClass("active").slideUp()
+                    $(this).children("span").removeClass("fa-minus").addClass("fa-plus")                }
+                else{
+                $(".card .card-body").removeClass("active").slideUp()
+                $(".card .card-header span").removeClass("fa-minus").addClass("fa-plus")
+                $(this).next(".card-body").addClass("active").slideDown()
+                $(this).children("span").removeClass("fa-plus").addClass("fa-minus")
+                }
+            })
+        })
+    </script>
+    {%endblock%}
+</body>
+
+</html>

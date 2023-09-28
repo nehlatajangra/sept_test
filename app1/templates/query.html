@@ -9,27 +9,60 @@
 </head>
 <body>    {% block body %}
 
-    <form>
     <div class="form-group">
         <label for="exampleInputEmail1">Search</label>
         <input type="text" class="form-control mt-2" id="queryInput" aria-describedby="emailHelp" placeholder="Enter to search" style="width: 20%;">
       </div>
-      <button type="button" class="btn btn-primary mt-3" id="searchBTN">Search</button>
+      <button type="button" class="btn btn-primary mt-3" id="searchBTN" onclick="getData()">Search</button>
+      <div id="apiData">
+        <table class="table" id="formDataTable" style="display: none;">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">title</th>
+                <th scope="col">ingredients</th>
+                <th scope="col">servings</th>
+                <th scope="col">instructions</th>
+            </tr>
+        </table>
+    </div>
 
-    </form>
     <script>
-        document.getElementById("searchBTN").addEventListener("click",function(){
-            var xhr= new XMLHttpRequest();
-            console.log("calling")
+        
+        function getData(){
             var query=document.getElementById("queryInput").value;
-            console.log(query)
-            xhr.open("Get",`https://api-ninjas.com/api/recipe?query=${query}`);
-            xhr.onload=function(){
-                var mydata=JSON.parse(xhr.responseText);
-                renderHtml(mydata)
-            };
-            xhr.send();
-        })
+            console.log(query) 
+            $.ajax({
+                method: 'GET',
+                url: 'https://api.api-ninjas.com/v1/recipe?query=' + query,
+                headers: { 'X-Api-Key': 'Z+RD8mHqCqQl42CiiFOMDA==WFBWorc9u3885g6H'},
+                contentType: 'application/json',
+                success: function(result) {
+                    console.log(result);
+                    renderHtml(result);
+                },
+                error: function ajaxError(jqXHR) {
+                    console.error('Error: ', jqXHR.responseText);
+                }
+            });
+        }
+            //create table for api data
+    function renderHtml(data){
+        document.getElementById("formDataTable").style.display="block"
+        var tbl = document.getElementById("formDataTable");
+        for (i =0;i<data.length;i++){
+        var row = tbl.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5=row.insertCell(4)
+        cell2.innerHTML = data[i].title;
+        cell3.innerHTML = data[i].ingredients;
+        cell4.innerHTML=data[i].servings;
+        cell5.innerHTML=data[i].instructions;
+        }
+    }
+
     </script>
     {% endblock %}
 

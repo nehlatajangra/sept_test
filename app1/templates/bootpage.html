@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bootstrap Page</title>
+
 </head>
 
 <body>
     {% block body %}
-    <div class="container">
-        <div class="main" >
+    <div class="container" style="height: 600px; width: 900px; box-shadow:5px 10px rgb(172, 183, 184);">
+        <div class="main">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"
                 style="height: 300px; width: 100%; background-color: green;">
                 <div class="carousel-indicators">
@@ -84,173 +85,89 @@
                 </button>
             </div>
 
-            <div class="cards_div row">
-                <div class="card col-3 ms-5 me-5" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card col-3 ms-5 me-5" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card col-4 ms-5 me-5" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <i class="fa-solid fa-laptop fa-2xl"></i>
+                    <h2>Heading</h2>
+                    <p>Some representative placeholder content for the three columns of text below the carousel. This is
+                        the first column.</p>
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <i class="fa-regular fa-image fa-2xl"></i>
+                    <h2>Heading</h2>
+                    <p>Another exciting bit of representative placeholder content. This time, we've moved on to the
+                        second column.</p>
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <i class="fa-solid fa-list fa-2xl"></i>
+                    <h2>Heading</h2>
+                    <p>And lastly this, the third column of representative placeholder content.</p>
+                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
             </div>
         </div>
-        <div class="footer">
-            <!-- Remove the container if you want to extend the Footer to full width. -->
-            <div class="container my-5">
-                <!-- Footer -->
-                <footer class="text-center text-lg-start text-white" style="background-color: #3e4551">
-                    <!-- Grid container -->
-                    <div class="container p-4 pb-0">
-                        <!-- Section: Links -->
-                        <section class="">
-                            <!--Grid row-->
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                                    <h5 class="text-uppercase">FOOTER CONTENT</h5>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Molestiae modi cum ipsam ad, illo possimus laborum ut
-                                        reiciendis obcaecati. Ducimus, quas. Corrupti, pariatur eaque?
-                                        Reiciendis assumenda iusto sapiente inventore animi?
-                                    </p>
-                                </div>
-                                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                                    <h5 class="text-uppercase">Links</h5>
-
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <a href="#!" class="text-white">Link 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 4</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                                    <h5 class="text-uppercase">Links</h5>
-
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <a href="#!" class="text-white">Link 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 4</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                                    <h5 class="text-uppercase">Links</h5>
-
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <a href="#!" class="text-white">Link 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 4</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                                    <h5 class="text-uppercase">Links</h5>
-
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <a href="#!" class="text-white">Link 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!" class="text-white">Link 4</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </section>
-
-                        <hr class="mb-4" />
-
-                        <section class="">
-                            <p class="d-flex justify-content-center align-items-center">
-                                <span class="me-3">Register for free</span>
-                                <button type="button" class="btn btn-outline-light btn-rounded">
-                                    Sign up!
-                                </button>
-                            </p>
-                        </section>
-
-                        <hr class="mb-4" />
-
-                        <section class="mb-4 text-center">
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-facebook-f"></i></a>
-
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-twitter"></i></a>
-
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-google"></i></a>
-
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-instagram"></i></a>
-
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-linkedin-in"></i></a>
-
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                                    class="fab fa-github"></i></a>
-                        </section>
-                    </div>
-
-                    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-                        © 2020 Copyright:
-                        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-                    </div>
-                </footer>
-            </div>
+    </div>
+    
+<div class="container mt-5" style="background-color: black; color: white ; width: 1000px;">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-2">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          </ul>
         </div>
+  
+        <div class="col-2">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-2">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-4 offset-1">
+          <form>
+            <h5>Subscribe to our newsletter</h5>
+            <p>Monthly digest of whats new and exciting from us.</p>
+            <div class="d-block w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control w-100" placeholder="Your Email address"><br>
+              <button class="btn btn-primary w-100" type="button" style="background-color: chocolate; border-color: black;">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="d-flex justify-content-between py-4 my-4 border-top">
+        <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+        </ul>
+      </div>
+    </footer>
     </div>
     {% endblock %}
 </body>

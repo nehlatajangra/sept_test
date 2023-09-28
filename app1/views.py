@@ -15,6 +15,12 @@ def templatePage(request):
 def QueryPage(request):
     return render(request,'query.html')
 
+def accordianPage(request):
+    return render(request,'accordian.html')
+
+def multistepForm(request):
+    return render(request,'multiStepForm.html')
+
 class PersonViewset(viewsets.ModelViewSet):
     queryset=Person.objects.all()
     serializer_class=PersonSerializer

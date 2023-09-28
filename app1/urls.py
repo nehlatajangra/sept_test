@@ -8,6 +8,8 @@ urlpatterns = [
     path('',views.index,name='index' ),
     path('crud/',views.crud,name='crud'),
     path('template/',views.templatePage,name='template'),
-    path('query/',views.QueryPage,name="query")
+    path('query/',views.QueryPage,name="query"),
+    path('accordian/',views.accordianPage,name="accordian"),
+    path('multistepform/',views.multistepForm,name='multistepform')
 ]
 urlpatterns+=router.urls

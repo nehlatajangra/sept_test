@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Step Form</title>
+    {%block style%}
+    <style>
+        .FormContainer {
+            width: 50%;
+            background-color: aliceblue;
+            height: 300px;
+        }
+
+        #registrationForm {
+            padding: 10px;
+        }
+
+        .form-control {
+            padding: auto;
+            margin-top: 10px;
+        }
+
+        .footer {
+            text-align: end;
+            padding-left: 10px;
+
+        }
+    </style>
+    {%endblock%}
+</head>
+
+<body>
+    {% block body %}
+    <div class="FormContainer ms-5 ">
+        <form id="registrationForm">
+            <h1 style="text-align: center;">Registraion Form</h1>
+            <div id="form1">Name:
+                <p><input class="form-control" id="fname" placeholder="First name" required></p>
+                <p><input class="form-control" id="lname" placeholder="Last name" required></p>
+                <div class="footer">
+                    <button type="button" class="btn btn-success" style="display: none;">Previous</button>
+                    <button type="button" class="btn btn-success" id="form1NextBtn">Next</button>
+                </div>
+            </div>
+            <div id="form2" style="display: none;">Contanct Info:
+                <p><input type="email" id="email" class="form-control" placeholder="E-mail"></p>
+                <p><input type="number" id="phone" class="form-control" placeholder="Phone" pattern="[6-9]{1}[0-9]{9}"
+                        title="number must start from 6,7,8,9, and must have 10 digits"></p>
+                <div class="footer">
+                    <button type="button" class="btn btn-success" id="form2PrevBtn">Previous</button>
+                    <button type="button" class="btn btn-success" id="form2NextBtn">Next</button>
+                </div>
+            </div>
+            <div id="form3" style="display: none;">Birth Date:
+                <p><input type="number" id="day" class="form-control" placeholder="day"></p>
+                <p><input type="number" id="month" class="form-control" placeholder="month"></p>
+                <p><input type="number" id="year" class="form-control" placeholder="year"></p>
+                <div class="footer">
+                    <button type="button" class="btn btn-success" id="form3PrevBtn">Previous</button>
+                    <button type="button" class="btn btn-success" id="form3NextBtn">Next</button>
+                </div>
+            </div>
+            <div id="form4" style="display: none;">Login Info:
+                <p><input id="username" class="form-control" placeholder="Username"></p>
+                <p><input id="password" type="password" class="form-control" placeholder="Password"></p>
+                <div class="footer">
+                    <button type="button" class="btn btn-success" id="form4PrevBtn">Previous</button>
+                    <button type="button" class="btn btn-success" id="form4NextBtn">Next</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <table class="table" id="formDataTable" style="display: none;">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Email</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Year of Birth</th>
+            <th scope="col">Username</th>
+            <th scope="col">Phone</th>
+        </tr>
+    </table>
+    </div>
+    <script>
+        //next btn functionality
+        document.getElementById("form1NextBtn").addEventListener("click", function () {
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            if (fname !== "" && lname !== "") {
+                document.getElementById("form2").style.display = "block";
+                document.getElementById("form1").style.display = "none";
+            }
+
+        })
+
+        document.getElementById("form2NextBtn").addEventListener("click", function () {
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            if (email !== "" && phone !== "") {
+                document.getElementById("form3").style.display = "block";
+                document.getElementById("form2").style.display = "none";
+            }
+        })
+        document.getElementById("form3NextBtn").addEventListener("click", function () {
+            var day = document.getElementById("day").value;
+            var month = document.getElementById("month").value;
+            var year = document.getElementById("year").value;
+            if (day !== "" && month !== "" && year !== "") {
+                document.getElementById("form4").style.display = "block";
+                document.getElementById("form3").style.display = "none";
+                document.getElementById("form4NextBtn").innerHTML = "submit"
+                document.getElementById("form4NextBtn").textContent = "submit"
+
+            }
+        })
+        document.getElementById("form4NextBtn").addEventListener("click", function () {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username !== "" && password !== "") {
+                document.getElementById("formDataTable").style.display = "block"
+                showFormData()
+
+            }
+
+        })
+
+        //previous btn funcationality
+        document.getElementById("form2PrevBtn").addEventListener("click", function () {
+            document.getElementById("form2").style.display = "none";
+            document.getElementById("form1").style.display = "block";
+        })
+        document.getElementById("form3PrevBtn").addEventListener("click", function () {
+            document.getElementById("form3").style.display = "none";
+            document.getElementById("form2").style.display = "block";
+        })
+        document.getElementById("form4PrevBtn").addEventListener("click", function () {
+            document.getElementById("form4").style.display = "none";
+            document.getElementById("form3").style.display = "block";
+        })
+
+        //show all data
+        function showFormData() {
+            var tbl = document.getElementById("formDataTable");
+            var row = tbl.insertRow();
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+
+
+            cell2.innerHTML = document.getElementById("email").value;
+            cell3.innerHTML = document.getElementById("fname").value;
+            cell4.innerHTML = document.getElementById("lname").value;
+            cell5.innerHTML = document.getElementById("year").value;
+            cell6.innerHTML = document.getElementById("username").value;
+            cell7.innerHTML = document.getElementById("phone").value;
+        }
+
+    </script>
+    {% endblock %}
+</body>
+
+</html>
